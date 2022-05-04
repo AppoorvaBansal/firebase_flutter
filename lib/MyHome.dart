@@ -11,7 +11,7 @@ class MyHome extends StatefulWidget {
 
 class _MyHomeState extends State<MyHome> {
 
-  //var firestoredb=FirebaseFirestore.instance.collection("TaskData").snapshots();
+  var firestoredb=FirebaseFirestore.instance.collection("TaskData").snapshots();
 
   
   @override
@@ -21,9 +21,9 @@ class _MyHomeState extends State<MyHome> {
         title: Text("Task Details"),
       ),
 
-      body:Center(
-
-        child: Text("HELLO"),
+      // body:Center(
+      //
+      //   child: Text("HELLO"),
       //   child: FloatingActionButton(
       //     backgroundColor: Colors.green,
       //     child: Icon(Icons.add),
@@ -33,26 +33,26 @@ class _MyHomeState extends State<MyHome> {
       //           .add({'Title': 'data added through app'});
       //     },
       //   ),
-      ),
+      //),
 
 
 
-      // body: StreamBuilder(
-      //   stream: firestoredb,
-      //   builder: (context,AsyncSnapshot snapshot) {
-      //     if (!snapshot.hasData) {
-      //       return CircularProgressIndicator();
-      //     }
-      //     else {
-      //       return ListView.builder(
-      //           itemCount: snapshot.data.documents.length,
-      //           itemBuilder:(context,int index){
-      //
-      //             return Text(snapshot.data.documents[index]['Title']);
-      //           } );
-      //     }
-      //   }
-      // )
+      body: StreamBuilder(
+        stream: firestoredb,
+        builder: (context,AsyncSnapshot snapshot) {
+          if (!snapshot.hasData) {
+            return CircularProgressIndicator();
+          }
+          else {
+            return ListView.builder(
+                itemCount: snapshot.data.documents.length,
+                itemBuilder:(context,int index){
+
+                  return Text(snapshot.data.documents[index]['Title']);
+                } );
+          }
+        }
+      )
 
 
 
