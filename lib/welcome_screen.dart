@@ -21,7 +21,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                FlatButton(
+                ElevatedButton(
                   //colour: Colors.lightBlueAccent,
                   //title: 'Log In',
                   child:Text("Login"),
@@ -30,7 +30,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Navigator.push(context,MaterialPageRoute(builder:(context)=>LoginScreen()));
                   },
                 ),
-                FlatButton(
+                ElevatedButton(
                     // colour: Colors.blueAccent,
                     // title: 'Register',
                   child: Text("REgister"),

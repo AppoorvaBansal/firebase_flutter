@@ -69,7 +69,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               SizedBox(
                 height: 24.0,
               ),
-              FlatButton(
+              ElevatedButton(
                 // colour: Colors.blueAccent,
                 // title: 'Register',
                 child: Text("REgister"),

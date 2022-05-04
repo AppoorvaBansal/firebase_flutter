@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'home_screen.dart';
 import 'rounded_button.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:flutter/material.dart';
@@ -69,9 +70,8 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 24.0,
               ),
-              RoundedButton(
-                  colour: Colors.lightBlueAccent,
-                  title: 'Log In',
+              ElevatedButton(
+                  child:Text("Login"),
                   onPressed: () async {
                     setState(() {
                       showSpinner = true;
@@ -80,7 +80,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       final user = await _auth.signInWithEmailAndPassword(
                           email: email, password: password);
                       if (user != null) {
-                        Navigator.pushNamed(context, 'home_screen');
+                        Navigator.push(context,MaterialPageRoute(builder:(context)=>HomeScreen()));
+
                       }
                     } catch (e) {
                       print(e);
